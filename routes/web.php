@@ -14,3 +14,16 @@
 Route::get('/', function () {
     return view('main');
 });
+
+Route::group(["prefix" => 'admin'], function () {
+
+Route::get('create', function () {
+    return view('admin.create')->name('admin.create');
+});
+
+Route::get('update/{id}', function ($id) {
+    return view('admin.update')->name('admin.update')->where('id' => '[0-9]');
+});
+
+    
+});
